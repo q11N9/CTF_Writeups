@@ -1,0 +1,45 @@
+LVM
+Tạo LVM: Disk -> PV -> VG -> LV -> FS
+1. Quét disk đc thêm mà ko cần reboot
+echo "- - -" > /sys/class/scsi_host/host*/scan
+host0 ->... tùy phiên bản
+2. Tạo Volume Group
+Tạo Physical Volume: sudo pvcreate /dev/sdb
+Tạo Volume Group: sudo vgcreate <volume_group_name> /dev/sdb
+Xem thông tin PV: sudo pvdisplay
+Xem thông tin VG: sudo vgdisplay vgs
+3. Tạo Logical Volume
+Tùy chỉnh kích thước LV
+sudo lvcreate -n <logical_volume_name> -L <size> <volume_group_name>
+Full kích thước VG
+sudo lvcreate -n data_lv -l 100%FREE ubuntu_vg
+4. Tạo FS cho LV
+sudo mkfs.ext4 /dev/ubuntu_vg/data_lv
+
+Mở rộng LVM
+
+1. Kiểm tra trạng thái hiện tại
+sudo vgdisplay        # Hiển thị thông tin về các Volume Group
+sudo pvdisplay        # Hiển thị thông tin về các Physical Volume
+2. Tạo PV nếu chưa tạo
+sudo pvcreate /dev/sdb
+Nếu là PV mở rộng, quét lại PV để nhận diện không gian mới
+sudo pvresize /dev/sdX
+3. Thêm PV vào VG
+sudo vgextend vg_data /dev/sdb
+Kiểm tra VG sau khi thêm
+sudo vgdisplay vg_data
+
+4. Sử dụng ko gian mới
+Tùy chỉnh kích thước cho lV
+sudo lvextend -L <size> /dev/vg_data/lv_existing  # Mở rộng LV hiện tại
+Toàn bộ kích thước của VG
+sudo lvextend -l +100%FREE /dev/vg_data/lv_existing  # Mở rộng LV hiện tại
+5.Mở rộng FS của LV
+Với định dạng file ext4
+sudo resize2fs /dev/ubuntu-vg/ubuntu-lv
+
+Done!
+
+
+
