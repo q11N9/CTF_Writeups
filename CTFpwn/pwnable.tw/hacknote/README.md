@@ -217,4 +217,4 @@ Result:
 
 ![image](https://hackmd.io/_uploads/BJADVixSyl.png)
 
-Script: [solve.py](https://github.com/q11N9/CTF_Writeups/new/main/CTFpwn/pwnable.tw/hacknote/solve.py)
+Script: [solve.py](https://github.com/q11N9/CTF_Writeups/blob/main/CTFpwn/pwnable.tw/hacknote/solve.py)
