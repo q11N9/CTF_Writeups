@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-
+# Original writeup from Quang
 from pwn import *
 
 context.binary = exe = ELF('./dead_or_alive_patched', checksec=False)
