@@ -153,4 +153,4 @@ To get shell, we just need to change `main` to exit, puts.plt to `system` and `p
 
 ![image](https://hackmd.io/_uploads/SyuspOjrye.png)
 
-Script: [solve.py](https://github.com/q11N9/CTF_Writeups/new/main/CTFpwn/pwnable.tw/SilverBullet/solve.py)
+Script: [solve.py](https://github.com/q11N9/CTF_Writeups/blob/main/CTFpwn/pwnable.tw/SilverBullet/solve.py)
