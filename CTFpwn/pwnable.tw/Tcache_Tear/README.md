@@ -144,3 +144,55 @@ Because FullRelRO is enabled, we cannot overwrite GOT. So we must overwrite `fre
 ![image](https://hackmd.io/_uploads/HkvD32HBJg.png)
 
 Script: [solve.py](https://github.com/q11N9/CTF_Writeups/new/main/CTFpwn/pwnable.tw/Tcache_Tear/solve.py)
+
+I searched and read some writeups and know that there is another way to solve this challenge without overwritting `name` variable. The idea is using FILE struct attack. For more information, you can read it in [here](https://hackmd.io/@y198/HkR3Bz1-s)(in Vietnamese)
+In conclusion, we must bypass this 
+
+![image](https://hackmd.io/_uploads/r1OGApSHkl.png)
+
+So we must set `fp->flags` to `0xfbad1800`, which is the value of `IO_IS_APPENDING`, and overwrite the last byte of `_IO_write_base` to `\x00` so we can leak out `_IO_stdfile_2_lock`. After modify it, the `__IO_2_1_stdout_` will be like this 
+```bash
+p _IO_2_1_stdout_ 
+$1 = {
+  file = {
+    _flags = 0xfbad1800,
+    _IO_read_ptr = 0x7c21d2bec7e3 <_IO_2_1_stdout_+131> "\n",
+    _IO_read_end = 0x7c21d2bec7e3 <_IO_2_1_stdout_+131> "\n",
+    _IO_read_base = 0x7c21d2bec7e3 <_IO_2_1_stdout_+131> "\n",
+    _IO_write_base = 0x7c21d2bec7e3 <_IO_2_1_stdout_+131> "\n",
+    _IO_write_ptr = 0x7c21d2bec7e3 <_IO_2_1_stdout_+131> "\n",
+    _IO_write_end = 0x7c21d2bec7e4 <_IO_2_1_stdout_+132> "",
+    _IO_buf_base = 0x7c21d2bec7e3 <_IO_2_1_stdout_+131> "\n",
+    _IO_buf_end = 0x7c21d2bec7e4 <_IO_2_1_stdout_+132> "",
+    _IO_save_base = 0x0,
+    _IO_backup_base = 0x0,
+    _IO_save_end = 0x0,
+    _markers = 0x0,
+    _chain = 0x7c21d2beba00 <_IO_2_1_stdin_>,
+    _fileno = 0x1,
+    _flags2 = 0x0,
+    _old_offset = 0xffffffffffffffff,
+    _cur_column = 0x0,
+    _vtable_offset = 0x0,
+    _shortbuf = "\n",
+    _lock = 0x7c21d2bed8c0 <_IO_stdfile_1_lock>,
+    _offset = 0xffffffffffffffff,
+    _codecvt = 0x0,
+    _wide_data = 0x7c21d2beb8c0 <_IO_wide_data_1>,
+    _freeres_list = 0x0,
+    _freeres_buf = 0x0,
+    __pad5 = 0x0,
+    _mode = 0xffffffff,
+    _unused2 = '\000' <repeats 19 times>
+  },
+  vtable = 0x7c21d2be82a0 <__GI__IO_file_jumps>
+}
+
+```
+
+![image](https://hackmd.io/_uploads/BydC7ABr1g.png)
+
+![image](https://hackmd.io/_uploads/B10070rSke.png)
+
+Other step is the same. 
+Script 2: [solve2.py](https://github.com/q11N9/CTF_Writeups/edit/main/CTFpwn/pwnable.tw/Tcache_Tear/solve2.py)
