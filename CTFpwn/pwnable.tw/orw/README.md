@@ -19,3 +19,4 @@ because this is 32 bit program, so i only write 4 bytes each time, with little e
 
 For registers to open, read, write, you can read in [here](https://chromium.googlesource.com/chromiumos/docs/+/master/constants/syscalls.md#x86-32_bit), in x86 section. 
 Script: [solve.py](https://github.com/q11N9/CTF_Writeups/blob/main/CTFpwn/pwnable.tw/orw/solve.py)
+Flag: ```FLAG{sh3llc0ding_w1th_op3n_r34d_writ3}```
