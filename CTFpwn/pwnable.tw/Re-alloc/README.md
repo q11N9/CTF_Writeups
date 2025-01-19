@@ -243,4 +243,4 @@ Like i talked before, `printf` will return the number of characters you input in
 
 ![image](https://hackmd.io/_uploads/Bys0mYVSyl.png)
 
-Script: [solve.py](https://github.com/q11N9/CTF_Writeups/new/main/CTFpwn/pwnable.tw/Re-alloc/solve.py)
+Script: [solve.py](https://github.com/q11N9/CTF_Writeups/blob/main/CTFpwn/pwnable.tw/Re-alloc/solve.py)
