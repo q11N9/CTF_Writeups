@@ -14,7 +14,7 @@ Address of **employee**:
 
 We can use `%n` to overwrite the value of **employee**
 Script: 
-```python!
+```python
 #!/usr/bin/env python3
 
 from pwn import *
