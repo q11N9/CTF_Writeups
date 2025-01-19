@@ -58,7 +58,7 @@ There is a call to rax, but our rax is now like this:
 
 If we calculate according to the offset of the payload, the called address will have a padding of 16. So we will have the following script:
 
-```python!
+```python
 #!/usr/bin/env python3
 
 from pwn import *
