@@ -345,4 +345,4 @@ int main(){
 
 ```
 
-Full script: [solve.py](https://github.com/q11N9/CTF_Writeups/new/main/CTFpwn/pwnable.tw/seethefile/solve.p](https://github.com/q11N9/CTF_Writeups/blob/main/CTFpwn/pwnable.tw/seethefile/solve.py))
+Full script: [solve.py](https://github.com/q11N9/CTF_Writeups/blob/main/CTFpwn/pwnable.tw/seethefile/solve.py))
