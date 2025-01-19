@@ -353,6 +353,6 @@ Next, we want to return our program.
 ![image](https://hackmd.io/_uploads/B1kJ2KeH1e.png)
 
 We can find the `leave_ret` and `ret` here. 
-Script: [solve.py](https://github.com/q11N9/CTF_Writeups/blob/main/CTFpwn/pwnable.tw/3x17/solve.py)
+Script: [[solve.py](https://github.com/q11N9/CTF_Writeups/blob/main/CTFpwn/pwnable.tw/3x17/solve.py)]
 
 ![image](https://hackmd.io/_uploads/HkCgTKgr1l.png)
