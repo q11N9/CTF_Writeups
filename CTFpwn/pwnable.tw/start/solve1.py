@@ -1,6 +1,6 @@
 from pwn import *
 import subprocess
-
+# The original writeup belongs to JHT Huu Tri
 context.binary = ELF("./start", checksec=False)
 # context.log_level = 'debug'
 
