@@ -113,3 +113,4 @@ unsigned __int64 __fastcall play(int a1, unsigned int *a2)
 }
 ```
 And if our bank is greater than 133742, we will have a flag. In this article, I think about setting the time to match **srand(time(Null))** on the server, then send the bet amount.
+although it is an easy challenge, but i've not solved it =w=. 
