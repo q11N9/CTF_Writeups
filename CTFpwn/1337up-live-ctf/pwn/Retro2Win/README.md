@@ -1,5 +1,5 @@
 Decompile we have the main function as follows:
-```c!
+```c
 // local variable allocation has failed, the output may be wrong!
 int __fastcall main(int argc, const char **argv, const char **envp)
 {
@@ -71,7 +71,7 @@ Now we will find the return address offset of the function **enter_cheatcode()**
 
 So the offset will be 24.
 We have the following script:
-```python!
+```python
 #!/usr/bin/env python3
 
 from pwn import *
