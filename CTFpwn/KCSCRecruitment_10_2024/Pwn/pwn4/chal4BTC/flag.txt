@@ -1,0 +1,1 @@
+KCSC{format_string}
