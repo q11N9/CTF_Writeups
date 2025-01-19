@@ -143,7 +143,7 @@ Because FullRelRO is enabled, we cannot overwrite GOT. So we must overwrite `fre
 
 ![image](https://hackmd.io/_uploads/HkvD32HBJg.png)
 
-Script: [solve.py](https://github.com/q11N9/CTF_Writeups/new/main/CTFpwn/pwnable.tw/Tcache_Tear/solve.py)
+Script: [solve.py](https://github.com/q11N9/CTF_Writeups/blob/main/CTFpwn/pwnable.tw/Tcache_Tear/solve.py)
 
 I searched and read some writeups and know that there is another way to solve this challenge without overwritting `name` variable. The idea is using FILE struct attack. For more information, you can read it in [here](https://hackmd.io/@y198/HkR3Bz1-s)(in Vietnamese)
 In conclusion, we must bypass this 
@@ -195,4 +195,4 @@ $1 = {
 ![image](https://hackmd.io/_uploads/B10070rSke.png)
 
 Other step is the same. 
-Script 2: [solve2.py](https://github.com/q11N9/CTF_Writeups/edit/main/CTFpwn/pwnable.tw/Tcache_Tear/solve2.py)
+Script 2: [solve2.py](https://github.com/q11N9/CTF_Writeups/blob/main/CTFpwn/pwnable.tw/Tcache_Tear/solve2.py)
