@@ -1,0 +1,15 @@
+.MODEL SMALL 
+.STACK 100
+.DATA 
+    A DW 16
+    B DW 0AF1h 
+.CODE 
+MAIN PROC 
+    MOV AX, @data
+	MOV DS, AX
+ 
+    MOV AX, A 
+    MOV BX, B 
+    MUL BX ;ket qua o AX = 0AF10h
+MAIN ENDP
+END MAIN

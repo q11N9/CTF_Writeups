@@ -1,0 +1,18 @@
+MOV SI, 0  ;gan 0 vao thanh ghi SI
+
+MOV CX, 10 ;gan 10 aka A (he binary) vao CX
+
+LAP:
+MOV AH, 1;gan 1 vao AH, hai cau lenh nafy taoj ra 
+INT 21H  ;ham 1 ngat INT, doc 1 ky tu from keyboard 
+         ;co AL = ma ASCII cua ky tu vua nhap
+
+INC SI   ;inc  x = x+1, 
+         ;hien tai SI = 0, sau cau nay SI=1 
+
+MOV AH, 2;gan 2 vao AH, hai cau lenh nay tao ra
+INT 21H  ;ham 2 ngat, hien 1 ky tu len man hinh
+         ;DL = ma ASCII cua ky tu
+         ;hien tai DL = 0, hien len dau trang
+
+LOOP LAP ;lap lai ham 1 ngat (tu label LAP)
